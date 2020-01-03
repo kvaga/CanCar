@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Log.v(LOG_TAG, "onResume");
+        Log.v(LOG_TAG, "onResume1");
         tView1 = (TextView) findViewById(R.id.textView1);
 
 
