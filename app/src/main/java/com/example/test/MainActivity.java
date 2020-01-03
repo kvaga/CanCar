@@ -3,6 +3,7 @@ package com.example.test;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ColorStateListInflaterCompat;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.v(LOG_TAG, "onResume2");
         tView1 = (TextView) findViewById(R.id.textView1);
-
+        tView2 = (TextView) findViewById(R.id.textView2);
 
         b_connect_can_arduino_bt=findViewById(R.id.b_connect_can_arduino_bt);
         b_connect_can_arduino_bt.setOnClickListener(new View.OnClickListener() {
@@ -38,9 +39,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        b2=findViewById(R.id.b_get_engine_health_status);
+        final Intent i = new Intent(this,SecondActivity.class);
+        View.OnClickListener b2_onClieckListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(i);
+            }
+        };
+        b2.setOnClickListener(b2_onClieckListener);
 
 
-        tView2 = (TextView) findViewById(R.id.textView2);
 
     }
 }
